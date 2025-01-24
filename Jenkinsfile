@@ -5,7 +5,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'mvn --version'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nandakumar1990-28/main.git']])
+                sh 'mvn clean install'
             }
         }
     }
