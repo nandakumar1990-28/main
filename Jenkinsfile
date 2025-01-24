@@ -19,5 +19,19 @@ pipeline {
                 }
             }
         }
+        stage('stop docker container'){
+            steps{
+                script{
+                    bat 'docker ps -q --filter "name=devops-integration" | grep -q . && docker stop devops-integration && docker rm -fv devops-integration'
+                }
+            }
+        }
+        stage('start docker container'){
+            steps{
+                script{
+                    bat 'docker run --name devops-integration -p 8081:8081'
+                }
+            }
+        }
     }
 }
