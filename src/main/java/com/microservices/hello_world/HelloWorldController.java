@@ -10,6 +10,6 @@ public class HelloWorldController {
 	@GetMapping("/hello-world")
 	public String hello()
 	{
-		return "Hello from rest app v1.";
+		return "Hello from rest app v2.";
 	}
 }
