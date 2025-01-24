@@ -15,7 +15,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t myimage/devops-integration'
+                    bat 'docker build -t myimage/devops-integration .'
                 }
             }
         }
