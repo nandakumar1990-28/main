@@ -29,7 +29,7 @@ pipeline {
         stage('start docker container'){
             steps{
                 script{
-                    bat 'docker run --name devops-integration -p 8081:8081'
+                    bat 'docker run --name devops-integration -p 8081:8081 myimage/devops-integration'
                 }
             }
         }
