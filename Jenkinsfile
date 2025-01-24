@@ -22,7 +22,7 @@ pipeline {
         stage('stop docker container'){
             steps{
                 script{
-                    bat 'docker ps -q --filter "name=devops-integration" | grep -q . && docker stop devops-integration && docker rm -fv devops-integration'
+                    bat 'docker stop devops-integration && docker rm -fv devops-integration'
                 }
             }
         }
