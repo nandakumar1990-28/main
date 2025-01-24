@@ -19,19 +19,5 @@ pipeline {
                 }
             }
         }
-        stage('stop docker container'){
-            steps{
-                script{
-                    bat 'docker rm -f devops-integration || true'
-                }
-            }
-        }
-        stage('start docker container'){
-            steps{
-                script{
-                    bat 'docker run --name devops-integration -p 8081:8081 myimage/devops-integration'
-                }
-            }
-        }
     }
 }
