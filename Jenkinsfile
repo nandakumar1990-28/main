@@ -1,6 +1,10 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
     agent any
+    tools
+    {
+        maven 'maven_build'
+    }
     stages {
         stage('build') {
             steps {
