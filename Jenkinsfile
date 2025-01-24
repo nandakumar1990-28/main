@@ -17,7 +17,7 @@ pipeline {
             {
                 script
                 {
-                    sh 'docker build -t 'myimage/devops-integration'
+                    sh 'docker build -t myimage/devops-integration'
                 }
             }
     }
