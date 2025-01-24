@@ -22,7 +22,7 @@ pipeline {
         stage('stop docker container'){
             steps{
                 script{
-                    bat 'docker stop devops-integration || true docker rm -fv devops-integration || true'
+                    bat 'docker rm -f devops-integration || true'
                 }
             }
         }
