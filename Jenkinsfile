@@ -19,5 +19,15 @@ pipeline {
                 }
             }
         }
+        stage('Push image to dockerhub'){
+            steps{
+                script{
+                   withDockerRegistry(credentialsId: 'dockerpwd') {
+   					bat 'docker push myimage/devops-integration:latest'
+					
+				}
+              }
+          }
+       }
     }
 }
