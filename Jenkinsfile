@@ -16,7 +16,7 @@ pipeline {
             steps{
                 script{
                     bat 'docker build -t myimage/devops-integration:latest .'
-		    bat 'docker tag myimage/devops-integration:latest nandakumar1990/myapp:latest'
+		    bat 'docker tag myimage/devops-integration:latest nandakumardj1990/myapp:latest'
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerpwd')]) {
 			   		bat 'docker logout'
     					bat 'docker login https://registry.hub.docker.com -u nandakumardj1990 -p Lithu@2025'
-    					bat 'docker push nandakumar1990/myapp:latest'
+    					bat 'docker push nandakumardj1990/myapp:latest'
 				}
               }
           }
