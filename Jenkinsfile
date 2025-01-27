@@ -22,7 +22,7 @@ pipeline {
         stage('Push image to dockerhub'){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: 'registryCredentials', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: 'registryCredentials') {
     					bat 'docker push myimage/devops-integration:latest'
 				}
               }
