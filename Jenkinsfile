@@ -20,5 +20,15 @@ pipeline {
                 }
             }
         }
+	stage('Push image to dockerhub'){
+            steps{
+                script{
+                   withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerpwd')]) {
+    					bat 'docker login -u nandakumardj1990 -p Lithu@2025'
+    					bat 'docker push nandakumardj1990/myapp:v1'
+				}
+              }
+          }
+       }    
     }
 }
