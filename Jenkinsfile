@@ -24,7 +24,7 @@ pipeline {
                 script{
                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerpwd')]) {
     					bat 'docker login -u nandakumardj1990 -p Lithu@2025'
-    					bat 'docker push myimage/devops-integration:latest'
+    					bat 'docker push nandakumardj1990/myrepository'
 				}
               }
           }
