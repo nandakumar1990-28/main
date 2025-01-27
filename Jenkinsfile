@@ -15,7 +15,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t myimage/devops-integration .'
+                    bat 'docker build -t myimage/devops-integration:latest .'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                 script{
                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerpwd')]) {
     					bat 'docker login -u nandakumardj1990 -p Lithu@2025'
-    					bat 'docker push nandakumardj1990/myrepository'
+    					bat 'docker push myimage/devops-integration:latest'
 				}
               }
           }
