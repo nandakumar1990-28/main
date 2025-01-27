@@ -25,7 +25,7 @@ pipeline {
                 script{
                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerpwd')]) {
 			   		bat 'docker logout'
-    					bat 'docker login https://hub.docker.com -u nandakumardj1990 -p ${dockerpwd}'
+    					bat 'docker login https://registry.hub.docker.com nandakumardj1990 -p Lithu@2025'
     					bat 'docker push nandakumar1990/myapp:latest'
 				}
               }
