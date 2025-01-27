@@ -24,6 +24,7 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerpwd')]) {
+			   		bat 'docker logout'
     					bat 'docker login -u nandakumardj1990 -p Lithu@2025'
     					bat 'docker push nandakumar1990/myapp:latest'
 				}
