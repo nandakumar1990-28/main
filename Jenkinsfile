@@ -22,9 +22,9 @@ pipeline {
         stage('Push image to dockerhub'){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: 'dockerpwd') {
-   					bat 'docker push myimage/devops-integration:latest'
-					
+                   withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhub-pwd')]) {
+    					bat 'docker login -u nandakumardj1990 -p ${dockerhub-pwd}'
+    					bat 'docker push myimage/devops-integration:latest'
 				}
               }
           }
